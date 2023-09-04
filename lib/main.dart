@@ -22,66 +22,110 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key,}) : super(key: key);
+  const MyHomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-var weightControler = TextEditingController();
-var feetControler = TextEditingController();
-var inchControler = TextEditingController();
+  var weightControler = TextEditingController();
+  var feetControler = TextEditingController();
+  var inchControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text("BMI CALCULATOR",style: TextStyle(
-          fontWeight: FontWeight.w500
-        ),),
+        title: Text(
+          "BMI CALCULATOR",
+          style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white),
+        ),
       ),
+      backgroundColor: Colors.grey[800],
       body: Padding(
-        padding: const EdgeInsets.only(top: 20,left: 25,right: 25),
+        padding: const EdgeInsets.only(left: 25, right: 25),
         child: Column(
-
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("BMI",style: TextStyle(
-              fontSize: 24,fontWeight: FontWeight.w500
-            ),),
+            Text(
+              "BMI",
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             TextField(
               controller: weightControler,
-              cursorColor: Color(0xff8F0000),
+              cursorColor: Colors.white,
               decoration: InputDecoration(
-                label: Text("Enter Your Weight in KG\'s",style: TextStyle(color: Color(0xff8F0000)),),
-                prefixIcon: Icon(Icons.scale,size: 20,color: Color(0xff8F0000),),
+                label: Text(
+                  "Enter Your Weight in KG\'s",
+                  style: TextStyle(color: Colors.white),
+                ),
+                prefixIcon: Icon(
+                  Icons.scale,
+                  size: 20,
+                  color: Colors.white,
+                ),
               ),
               keyboardType: TextInputType.number,
-
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
               controller: feetControler,
-              cursorColor: Color(0xff8F0000),
+              cursorColor: Colors.white,
               decoration: InputDecoration(
-                label: Text("Enter Your Height in feet",style: TextStyle(color: Color(0xff8F0000)),),
-                prefixIcon: Icon(Icons.height,size: 20,color: Color(0xff8F0000),),
+                label: Text(
+                  "Enter Your Height in feet",
+                  style: TextStyle(color: Colors.white),
+                ),
+                prefixIcon: Icon(
+                  Icons.height,
+                  size: 20,
+                  color: Colors.white,
+                ),
               ),
               keyboardType: TextInputType.number,
-
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
               controller: inchControler,
-              cursorColor: Color(0xff8F0000),
+              cursorColor: Colors.white,
               decoration: InputDecoration(
-                label: Text("Enter Your Height in inch",style: TextStyle(color: Color(0xff8F0000)),),
-                prefixIcon: Icon(Icons.height,size: 20,color: Color(0xff8F0000),),
+                label: Text(
+                  "Enter Your Height in inch",
+                  style: TextStyle(color: Colors.white),
+                ),
+                prefixIcon: Icon(
+                  Icons.height,
+                  size: 20,
+                  color: Colors.white,
+                ),
               ),
               keyboardType: TextInputType.number,
-
-
             ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold),),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+              ),
+
+            )
           ],
         ),
       ),
