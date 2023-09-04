@@ -35,6 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var feetControler = TextEditingController();
   var inchControler = TextEditingController();
 
+  var result = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,13 +121,31 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold),),
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
-              ),
+              onPressed: () {
+                var wt = weightControler.text.toString();
+                var ft = weightControler.text.toString();
+                var inch = weightControler.text.toString();
 
-            )
+                if (wt != "" && ft != "" && inch != "") {
+                }
+                else {
+                  setState(() {
+                    result ="please fill all the reguired blanks";
+                  });
+                }
+              },
+              child: Text(
+                "Calculate",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+              ),
+            ),
+            Text(
+              result,
+              style: TextStyle(fontSize: 16),
+            ),
           ],
         ),
       ),
