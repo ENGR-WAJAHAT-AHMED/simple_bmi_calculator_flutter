@@ -123,10 +123,25 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 var wt = weightControler.text.toString();
-                var ft = weightControler.text.toString();
-                var inch = weightControler.text.toString();
+                var ft = feetControler.text.toString();
+                var inch = inchControler.text.toString();
 
                 if (wt != "" && ft != "" && inch != "") {
+                  var iwt = int.parse(wt);
+                  var ift = int.parse(ft);
+                  var iinch = int.parse(inch);
+
+                  var tinch =(ift*12) + iinch;
+
+                  var tcm = tinch * 2.54;
+
+                  var tm = tcm/100;
+
+                  var bmi = iwt/(tm*tm);
+
+                 setState(() {
+                   result = "your BMI is: ${bmi.toStringAsFixed(2)}";
+                 });
                 }
                 else {
                   setState(() {
@@ -142,9 +157,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 primary: Colors.red,
               ),
             ),
+            SizedBox(height: 20,),
             Text(
               result,
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 20,color: Colors.white),
             ),
           ],
         ),
