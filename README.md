@@ -9,6 +9,18 @@ Display the calculated BMI value.
 Provide an interpretation of the BMI value (e.g., underweight, normal weight, overweight, etc.).
 User-friendly interface.
 
+
+# Usage
+Enter your weight (in kilograms) and height (in centimeters) in the respective fields.
+Press the "Calculate" button.
+Your BMI value and interpretation will be displayed below.
+Contributing
+Contributions are welcome! Please feel free to open an issue or submit a pull request for any improvements or features you'd like to add. For major changes, please open an issue first to discuss your ideas.
+
+# Acknowledgments
+This app was created as a learning project for Flutter development.
+BMI calculations in this app are for informational purposes and should not replace professional medical advice.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
